@@ -10,7 +10,7 @@
 <jsp:include page="resources/head.jsp" />
 <jsp:include page="resources/navbar.jsp" />
 <%
-    String error="",err;
+    String error="";
      HttpSession  httpSession = request.getSession();
      User user1= (User)httpSession.getAttribute("user");
      if(user1!=null)
@@ -18,7 +18,7 @@
          response.sendRedirect("index.jsp");
      }
      
-     if(request.getParameter("email")!=null)  //it will never be null
+     if(request.getParameter("email")!=null)
      {
          String email=request.getParameter("email");
          String password=request.getParameter("password");
@@ -29,7 +29,6 @@
              error = "User does not exist";
         }
          else{
-             out.print("<h1>user does exist></h1>");
              httpSession.setAttribute("user", user);
              response.sendRedirect("index.jsp");
          }

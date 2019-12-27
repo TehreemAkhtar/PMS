@@ -177,7 +177,7 @@ public class User {
             int rst = pst.executeUpdate();
             if (rst != 0) {
                 Statement st = conn.createStatement();
-                ResultSet rs = st.executeQuery("select * from users");
+                ResultSet rs = st.executeQuery("select * from User");
                 if (rs.last()) {
                     User usr1 = new User();
 
